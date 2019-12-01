@@ -1,0 +1,29 @@
+@import "~bootstrap/scss/bootstrap";
+
+.search{
+  height: 250px;
+  background-color: #e9e9e9;
+}
+
+.search input{
+  width: 100%;
+}
+
+.map{
+  height: 250px;
+  background-color: antiquewhite;
+}
+
+.map p{
+  text-align: center;
+}
+
+.addCompany input{
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.addCompany .btn {
+  float:right;
+}

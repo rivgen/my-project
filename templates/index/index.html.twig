@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    Hellow word!!!
+    <div class="row">
+        <div class="col-md-2">
+           logo
+        </div>
+        <div class="col-md-7">
+            <div class="row">
+                <div class="col-md-4">каталог</div>
+                <div class="col-md-4">товары</div>
+                <div class="col-md-4">услуги</div>
+            </div>
+        </div>
+        <div class="col-md-1">
+            location
+        </div>
+        <div class="col-md-2">
+            login
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-md-3">
+            добавить компанию
+        </div>
+    </div>
+    <div class="row justify-content-center search">
+        <div class="col-md-6 align-self-center">
+            <input placeholder="поиск..."/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 addCompany">
+            <form>
+                <p>Добавить компанию по шагово</p>
+                <input placeholder="Название организации"/>
+                <input placeholder="Адрес организации"/>
+                <input placeholder="рубрика"/>
+                <batton type="button" class="btn btn-light">Далее >></batton>
+            </form>
+        </div>
+        <div class="col-md-8">
+            <p>изменения на сайте(кто добавился, кто сделал запрос, кто сделал изменения, кто добавил новость и т.д.)</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            Страна: <select>
+                {% for i in 1..5 %}
+                <option>Страна {{ i }}</option>
+                {% endfor %}
+                    </select>
+        </div>
+        <div class="col-md-4">
+            Регион: <select>
+                {% for i in 1..10 %}
+                    <option>Регион {{ i }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-md-4">
+            Город: <select>
+                {% for i in 1..100 %}
+                    <option>Город {{ i }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="row map">
+        <div class="col-md-12 align-self-center">
+            <p>карта</p>
+        </div>
+    </div>
+    <div>
+        <h2>Самые популярные запросы поиска</h2>
+    </div>
+{% endblock %}
