@@ -1,4 +1,8 @@
 {% extends 'base.html.twig' %}
+{#{% block javascripts %}#}
+    {#{{ parent() }}#}
+    {#{{ encore_entry_script_tags('react') }}#}
+{#{% endblock %}#}
 {% block body %}
     Hellow word!!!
     <div class="row">
@@ -46,15 +50,15 @@
     <div class="row">
         <div class="col-md-4">
             Страна: <select>
-                {% for i in 1..5 %}
-                <option>Страна {{ i }}</option>
+                {% for country in countries %}
+                <option>{{ country.countryName }}</option>
                 {% endfor %}
                     </select>
         </div>
         <div class="col-md-4">
             Регион: <select>
-                {% for i in 1..10 %}
-                    <option>Регион {{ i }}</option>
+                {% for region in regions %}
+                    <option>{{ region.regionName }}</option>
                 {% endfor %}
             </select>
         </div>
@@ -66,6 +70,7 @@
             </select>
         </div>
     </div>
+    <div id="root"></div>
     <div class="row map">
         <div class="col-md-12 align-self-center">
             <p>карта</p>
