@@ -47,4 +47,13 @@ class CityRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function CitiesRegion($region)
+    {
+        $qb = $this->createQueryBuilder('city');
+        $qb ->andWhere('city.region = :region');
+        $qb -> setParameter('region', $region);
+
+        return $qb->getQuery()->getArrayResult();
+    }
 }

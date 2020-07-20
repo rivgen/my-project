@@ -63,6 +63,11 @@ class Country
      */
     private $regions;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $zoom;
+
     public function __construct()
     {
         $this->regions = new ArrayCollection();
@@ -196,6 +201,18 @@ class Country
                 $region->setCountry(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getZoom(): ?int
+    {
+        return $this->zoom;
+    }
+
+    public function setZoom(int $zoom): self
+    {
+        $this->zoom = $zoom;
 
         return $this;
     }

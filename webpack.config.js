@@ -48,9 +48,12 @@ Encore
     .enableVersioning(Encore.isProduction())
 
     // enables @babel/preset-env polyfills
-    .configureBabel(() => {}, {
+    .configureBabel(function(babelConfig) {
+        // no plugins are added by default, but you can add some
+        babelConfig.plugins.push('@babel/plugin-proposal-class-properties');
+    }, {
         useBuiltIns: 'usage',
-        corejs: 3
+        corejs: 3,
     })
     .enableReactPreset()
     // enables Sass/SCSS support

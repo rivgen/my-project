@@ -1,9 +1,11 @@
 <?php
 namespace App\Controller;
 
+use App\Entity\City;
 use App\Entity\Country;
 use App\Entity\Region;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -20,7 +22,8 @@ class IndexController extends AbstractController
         $regionRepository = $em->getRepository(Region::class);
         $countries = $countryRepository -> findAll();
         $regions = $regionRepository -> findAll();
-
+//    $country = $request->query->get('country');
+//        dump($countries);
         return $this->render('index/index.html.twig',[
             'countries' => $countries,
             'regions' => $regions,

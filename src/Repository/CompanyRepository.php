@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\City;
 use App\Entity\Company;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
@@ -47,4 +48,18 @@ class CompanyRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function CompaniesRegion($region)
+    {
+        $qb = $this->createQueryBuilder('c')
+            ->select('ct.cityName, c.address')
+            ->leftJoin(City::class, 'ct', 'WITH', 'c.city = ct.id')
+            ->andWhere('ct.region = :region')
+            ->setParameter('region', $region)
+            ->andWhere('c.logo = 1')
+            ->setMaxResults(10);
+
+        return $qb->getQuery()->getArrayResult();
+    }
+
 }

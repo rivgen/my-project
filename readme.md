@@ -22,5 +22,11 @@ yarn add react-router-dom
 yarn add --dev react react-dom prop-types axios
 yarn add @babel/plugin-proposal-class-properties @babel/plugin-transform-runtime
 
+//установка redux
+yarn add redux
+yarn add react-redux
+//Redux-devtools: опционально, дает некоторые полезные инструменты для разработки.
+npm install --save-dev redux-devtools
+
 //material ui
 yarn add material-ui

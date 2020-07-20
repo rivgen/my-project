@@ -47,29 +47,29 @@
             <p>изменения на сайте(кто добавился, кто сделал запрос, кто сделал изменения, кто добавил новость и т.д.)</p>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-            Страна: <select>
-                {% for country in countries %}
-                <option>{{ country.countryName }}</option>
-                {% endfor %}
-                    </select>
-        </div>
-        <div class="col-md-4">
-            Регион: <select>
-                {% for region in regions %}
-                    <option>{{ region.regionName }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div class="col-md-4">
-            Город: <select>
-                {% for i in 1..100 %}
-                    <option>Город {{ i }}</option>
-                {% endfor %}
-            </select>
-        </div>
-    </div>
+    {#<div class="row">#}
+        {#<div class="col-md-4">#}
+            {#Страна: <select>#}
+                {#{% for country in countries %}#}
+                {#<option>{{ country.countryName }}</option>#}
+                {#{% endfor %}#}
+                    {#</select>#}
+        {#</div>#}
+        {#<div class="col-md-4">#}
+            {#Регион: <select>#}
+                {#{% for region in regions %}#}
+                    {#<option>{{ region.regionName }}</option>#}
+                {#{% endfor %}#}
+            {#</select>#}
+        {#</div>#}
+        {#<div class="col-md-4">#}
+            {#Город: <select>#}
+                {#{% for i in 1..100 %}#}
+                    {#<option>Город {{ i }}</option>#}
+                {#{% endfor %}#}
+            {#</select>#}
+        {#</div>#}
+    {#</div>#}
     <div id="root"></div>
     <div class="row map">
         <div class="col-md-12 align-self-center">

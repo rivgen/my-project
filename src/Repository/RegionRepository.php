@@ -47,4 +47,14 @@ class RegionRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function RegionsCountry($country)
+    {
+        $qb = $this->createQueryBuilder('r');
+        $qb ->andWhere('r.country = :country');
+        $qb -> setParameter('country', $country);
+
+        return $qb->getQuery()->getArrayResult();
+    }
+
 }

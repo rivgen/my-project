@@ -1,16 +1,19 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-console.log('hellow');
+import { Provider } from 'react-redux'
+import App from './containers/App';
+import { store } from './store/configureStore'
+
 class Home extends Component {
 
     render() {
-
         return (
-            <div> Hellowkjhlhjhl</div>
+            <Provider store={store}>
+                <App/>
+            </Provider>
         )
     }
 }
-// export default Home;
 
 ReactDOM.render(<Home />, document.getElementById('root'));
 

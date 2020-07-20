@@ -17,19 +17,29 @@ class City
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=100)
      */
     private $cityName;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $iso;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Region", inversedBy="cities")
+     */
+    private $region;
+
+    /**
      * @ORM\Column(type="integer")
      */
-    private $regionIso;
+    private $zoom;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Company", mappedBy="city")
+     */
+    private $companies;
 
     public function getId(): ?int
     {
@@ -60,15 +70,44 @@ class City
         return $this;
     }
 
-    public function getRegionIso(): ?int
+    public function getRegion(): ?region
     {
-        return $this->regionIso;
+        return $this->region;
     }
 
-    public function setRegionIso(int $regionIso): self
+    public function setRegion(?region $region): self
     {
-        $this->regionIso = $regionIso;
+        $this->region = $region;
 
         return $this;
     }
+
+    public function getZoom(): ?int
+    {
+        return $this->zoom;
+    }
+
+    public function setZoom(int $zoom): self
+    {
+        $this->zoom = $zoom;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCompanies()
+    {
+        return $this->companies;
+    }
+
+    /**
+     * @param mixed $companies
+     */
+    public function setCompanies($companies)
+    {
+        $this->companies = $companies;
+    }
+
 }

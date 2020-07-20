@@ -47,4 +47,11 @@ class CountryRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function allCountry()
+    {
+        $qb = $this->createQueryBuilder('c')->orderBy('c.id','DESC');
+
+        return $qb->getQuery()->getArrayResult();
+    }
 }
